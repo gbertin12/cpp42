@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/28 21:42:01 by gbertin          ###   ########.fr       */
+/*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
+/*   Updated: 2022/10/29 11:06:56 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-
-#include <string.h>
+#include "HumanA.hpp"
+#include "Weapon.hpp"
 #include <iostream>
+#include <string.h>
 
-class Zombie {
-	
-	public:
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon) {
+	return ;
+}
 
-	Zombie(std::string name);
-	~Zombie(void);
-	
-	void	announce(void) const;
-	
-	private:
-	
-	std::string _name;
-};
+HumanA::~HumanA(void) {
+	std::cout << "HumanA was instantiated" << std::endl;
+	return ;
+}
 
-void	randomChump(std::string name);
-Zombie	*newZombie(std::string name);
-
-#endif
+void	HumanA::attack()
+{
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+}

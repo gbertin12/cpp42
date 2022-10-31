@@ -6,15 +6,13 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:58 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/28 18:08:06 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/10/28 21:37:46 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.cpp"
+#include "Zombie.hpp"
 
 Zombie *newZombie(std::string name)
 {
-	Zombie *newZombie = new Zombie();
-	newZombie->setName(name);
-	return (newZombie);
+	return new Zombie(name);
 }

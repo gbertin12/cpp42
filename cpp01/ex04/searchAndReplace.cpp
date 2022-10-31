@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   searchAndReplace.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/28 21:42:01 by gbertin          ###   ########.fr       */
+/*   Created: 2022/10/30 01:59:00 by gbertin           #+#    #+#             */
+/*   Updated: 2022/10/30 07:55:37 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-
-#include <string.h>
 #include <iostream>
 
-class Zombie {
+std::string	searchAndReplace(std::string occurence, std::string s1, std::string s2)
+{
+	int index;
 	
-	public:
-
-	Zombie(std::string name);
-	~Zombie(void);
-	
-	void	announce(void) const;
-	
-	private:
-	
-	std::string _name;
-};
-
-void	randomChump(std::string name);
-Zombie	*newZombie(std::string name);
-
-#endif
+	if (!s1.empty())
+	{
+		index = occurence.find(s1, 0);
+		while (index != -1)
+		{
+			occurence.erase(index, s1.length());
+			occurence.insert(index, s2);
+			index = occurence.find(s1);
+		}
+	}
+	return (occurence);
+}

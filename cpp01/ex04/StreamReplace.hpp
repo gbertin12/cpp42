@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   StreamReplace.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/28 21:42:01 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/10/30 02:05:57 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#ifndef STREAMREPLACE_H
+# define STREAMREPLACE_H
 
-#include <string.h>
+#include "StreamReplace.hpp"
 #include <iostream>
 
-class Zombie {
-	
+class StreamReplace {
+
 	public:
 
-	Zombie(std::string name);
-	~Zombie(void);
-	
-	void	announce(void) const;
+	StreamReplace(std::string filename, std::string s1, std::string s2);
+	~StreamReplace(void);
+
+	void		replaceOccurance(void);
 	
 	private:
+
+	std::string _filename;
+	std::string _s1;
+	std::string _s2;
+
 	
-	std::string _name;
 };
 
-void	randomChump(std::string name);
-Zombie	*newZombie(std::string name);
+std::string	searchAndReplace(std::string occurence, std::string s1, std::string s2);
 
 #endif
