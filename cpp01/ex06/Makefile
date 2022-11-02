@@ -5,20 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/28 22:23:52 by gbertin           #+#    #+#              #
-#    Updated: 2022/10/31 11:41:59 by gbertin          ###   ########.fr        #
+#    Created: 2022/10/29 11:11:50 by gbertin           #+#    #+#              #
+#    Updated: 2022/10/31 11:50:13 by gbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = weapons
+NAME = HarlFilter
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 RM = rm -f
 SRCS =	main.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
-		Weapon.cpp 
-		
+		Harl.cpp
+
 OBJ = $(SRCS:.cpp=.o)
 
 
@@ -36,4 +34,4 @@ fclean:	clean
 
 re: fclean all
 		
-.PHONY: all clean fclean re%                   
+.PHONY: all clean fclean re

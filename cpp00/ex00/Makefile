@@ -6,7 +6,7 @@
 #    By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 13:40:54 by gbertin           #+#    #+#              #
-#    Updated: 2022/10/28 12:18:38 by gbertin          ###   ########.fr        #
+#    Updated: 2022/10/31 11:40:45 by gbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,5 +29,7 @@ clean:
 fclean:	clean
 		$(RM) $(OBJ)
 		$(RM) $(NAME)
+
+re: fclean all
 		
 .PHONY: all clean fclean re
