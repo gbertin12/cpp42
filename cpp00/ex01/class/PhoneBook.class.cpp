@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:11:22 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/28 12:29:09 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/07 10:36:25 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	PhoneBook::print_in_tab(std::string s) const
 	}
 	else
 	{
-		for (int i; i < 9; i++)
-			std::cout << s.c_str()[i];
+		for (int i = 0; i < 9; i++)
+			std::cout << s[i];
 		std::cout << ".";
 	}
 }
@@ -143,11 +143,15 @@ void	PhoneBook::search_contact(void) const
 			else if (i > this->_nb_contact && i < 9)
 				std::cout << "This index is empty" << std::endl;
 			else if (i == 9)
-				std::cout << "Bad Entry" << std::endl;
+				std::cout << "9 is forbidden" << std::endl;
 			if (i < 1 || (i > PhoneBook::_nb_contact && i < 9) || i == 9)
 				return ;
 			this->print_contact_info(i);
 		}
+		else
+			std::cout << "You must enter a digit" << std::endl;
 	}
+	else
+		std::cout << "You must enter a number between 1 and 8" << std::endl;
 	return ;
 }
