@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 08:43:07 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/04 16:38:00 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef BRAIN_H
+# define BRAIN_H
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#include "Brain.hpp"
 #include <iostream>
 
-class ScavTrap : virtual public ClapTrap 
-{
+class Brain {
 
 	public:
 
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	virtual ~ScavTrap(void);
-	ScavTrap(const ScavTrap& obj);
-	ScavTrap& operator=(const ScavTrap& rhs);
+	Brain(void);
+	~Brain(void);
+	Brain(const Brain& obj);
+	Brain& operator=(const Brain& rhs);
 
-	void	attack(const std::string &target);
-	void	guardGate(void);
-	int		getEnergyPoints(void);
+	void		addIdea(std::string idea);
+	int			getIndex(void);
+	std::string getIdeaById(int id);
+	
+	private:
+	
+	std::string _ideas[100];
+	int			_index;
 
 };
 

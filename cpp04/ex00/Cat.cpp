@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 08:43:07 by gbertin          ###   ########.fr       */
+/*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
+/*   Updated: 2022/11/04 09:50:39 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
-
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#include "Cat.hpp"
 #include <iostream>
 
-class ScavTrap : virtual public ClapTrap 
-{
 
-	public:
+Cat::Cat(void) : Animal("Cat") {
+	std::cout << "Cat Constructor called" << std::endl;
+	return ;
+}
 
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	virtual ~ScavTrap(void);
-	ScavTrap(const ScavTrap& obj);
-	ScavTrap& operator=(const ScavTrap& rhs);
+Cat::~Cat(void) {
+	std::cout << "Cat Destructor called" << std::endl;
+	return ;
+}
 
-	void	attack(const std::string &target);
-	void	guardGate(void);
-	int		getEnergyPoints(void);
+Cat::Cat(const Cat& obj) {
+	this->_type = obj._type;
+	return ;
+}
 
-};
+Cat&	Cat::operator=(const Cat& obj) {
+	this->_type = obj._type;
+	return *this;
+}
 
-#endif
+void	Cat::makeSound(void) {
+	std::cout << "Miaou miou !" << std::endl;
+}

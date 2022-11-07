@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 08:43:07 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/04 10:14:26 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
+#ifndef WRONGANIMAL_H
+# define WRONGANIMAL_H
 
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 
-class ScavTrap : virtual public ClapTrap 
-{
+class WrongAnimal {
 
 	public:
 
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	virtual ~ScavTrap(void);
-	ScavTrap(const ScavTrap& obj);
-	ScavTrap& operator=(const ScavTrap& rhs);
+	WrongAnimal(void);
+	WrongAnimal(std::string type);
+	~WrongAnimal(void);
+	WrongAnimal(const WrongAnimal& obj);
+	WrongAnimal& operator=(const WrongAnimal& rhs);
 
-	void	attack(const std::string &target);
-	void	guardGate(void);
-	int		getEnergyPoints(void);
+	void		makeSound();
+	std::string getType();
+	
+	protected:
 
+	std::string _type;
 };
 
 #endif

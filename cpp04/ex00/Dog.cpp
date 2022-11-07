@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 08:43:07 by gbertin          ###   ########.fr       */
+/*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
+/*   Updated: 2022/11/04 09:36:20 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-# define SCAVTRAP_H
-
-#include "ScavTrap.hpp"
-#include "ClapTrap.hpp"
+#include "Dog.hpp"
 #include <iostream>
 
-class ScavTrap : virtual public ClapTrap 
-{
+Dog::Dog(void) : Animal("Dog") {
+std::cout << "Dog Constructor called" << std::endl;
+	return ;
+}
 
-	public:
+Dog::~Dog(void) {
+	std::cout << "Dog Destructor called" << std::endl;
+	return ;
+}
 
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	virtual ~ScavTrap(void);
-	ScavTrap(const ScavTrap& obj);
-	ScavTrap& operator=(const ScavTrap& rhs);
+Dog::Dog(const Dog& obj) {
+	return ;
+}
 
-	void	attack(const std::string &target);
-	void	guardGate(void);
-	int		getEnergyPoints(void);
+Dog&	Dog::operator=(const Dog& obj) {
+	return *this;
+}
 
-};
-
-#endif
+void	Dog::makeSound(void) {
+	std::cout << "Wouafff Wouaff !!" << std::endl;
+}

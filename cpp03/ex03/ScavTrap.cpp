@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/02 11:40:53 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/04 08:43:51 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,8 @@ void	ScavTrap::attack(const std::string &target) {
 
 void	ScavTrap::guardGate(void) {
 	std::cout << "ScavTrap " << this->_name << " enter in guard Gate mode ! [WARNING]" << std::endl;
+}
+
+int		ScavTrap::getEnergyPoints(void) {
+	return 50;
 }

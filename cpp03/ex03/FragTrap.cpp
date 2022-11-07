@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/02 15:26:44 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/03 16:58:24 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,8 @@ void	FragTrap::highFivesGuys(void) {
 
 int		FragTrap::getAttackDamage(void) const {
 	return this->_attackDamage;
+}
+
+void	FragTrap::setAttackDamage(void) {
+	this->_attackDamage = 30;
 }
