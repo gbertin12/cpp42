@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/01 09:28:57 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/08 11:25:48 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Fixed&	Fixed::operator=(const Fixed& obj) {
 }
 
 Fixed::~Fixed(void) {
-	std::cout << "Default Fixed deconstructor called" << std::endl;
+	std::cout << "Default Fixed Destructor called" << std::endl;
 	return ;
 }
 

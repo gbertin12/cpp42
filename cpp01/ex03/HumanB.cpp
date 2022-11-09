@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/29 10:56:45 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/08 08:49:19 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 #include <string.h>
 
 HumanB::HumanB(std::string name) : _name(name) {
+	std::cout << "HumanB Constructor called" << std::endl;
 	return ;
 }
 
 HumanB::~HumanB(void) {
-	std::cout << "HumanB was instantiated" << std::endl;
+	std::cout << "HumanB Destructor called" << std::endl;
 	return ;
 }
 

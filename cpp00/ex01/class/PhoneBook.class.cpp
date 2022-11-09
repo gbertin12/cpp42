@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:11:22 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/07 10:36:25 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/07 16:24:05 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ void	PhoneBook::add(void) {
 	for (int i = 0; i < 5; i++)
 	{
 		std::cout << "Enter " << fields[i];
-		std::getline(std::cin, answer[i]);
+		if (!std::getline(std::cin, answer[i]))
+		{
+			std::cout << std::endl;	
+			return ;
+		}
 		if (answer[i].empty() || this->empty_string(answer[i]))
 		{
 			std::cout << fields[i] << " field is empty" << std::endl;
@@ -61,7 +65,7 @@ void	PhoneBook::print_in_tab(std::string s) const
 		std::cout << s.c_str();
 	else if (std::strlen(s.c_str()) < 10)
 	{
-		for (int i = 0; i + std::strlen(s.c_str()) != 10; i++)
+		for (size_t i = 0; i + s.size() != 10; i++)
 			std::cout << " ";
 		std::cout << s;
 	}
@@ -73,11 +77,11 @@ void	PhoneBook::print_in_tab(std::string s) const
 	}
 }
 
-void	PhoneBook::show_contact(void) const {
+bool	PhoneBook::show_contact(void) const {
 	if (this->_nb_contact == 0)
 	{
 		std::cout << "Sorry, you don't have contact" << std::endl;
-		return ;
+		return true;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
 	std::cout << "|     index|First Name| last Name| nick Name|" << std::endl;
@@ -97,6 +101,7 @@ void	PhoneBook::show_contact(void) const {
 	}
 	std::cout << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
+	return (false);
 }
 
 void	PhoneBook::start_msg(void) const {
@@ -106,12 +111,9 @@ void	PhoneBook::start_msg(void) const {
 
 bool	PhoneBook::empty_string(std::string str) const
 {
-	const char *s;
-	
-	s = str.c_str();
-	for (int i = 0; i < std::strlen(s); i++)
+	for (size_t i = 0; i < str.size(); i++)
 	{
-		if (!std::isspace(s[i]))
+		if (!std::isspace(str[i]))
 			return (false);
 	}
 	return (true);
@@ -132,7 +134,11 @@ void	PhoneBook::search_contact(void) const
 	int			i;
 	
 	std::cout << "enter index for more informations : ";
-	std::getline(std::cin, index);
+	if (std::getline(std::cin, index))
+	{
+		std::cout << std::endl;	
+		return ;
+	}
 	if (index.size() == 1)
 	{
 		if (std::isdigit(index.c_str()[0]))

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/30 08:05:26 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/08 08:52:52 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 #include <fstream>
 
 StreamReplace::StreamReplace(std::string filename, std::string s1, std::string s2) : _filename(filename), _s1(s1), _s2(s2) {
+	std::cout << "StreamReplace Constructor Called" << std::endl;
 	return ;
 }
 
 StreamReplace::~StreamReplace(void) {
-	std::cout << "StreamReplace was instantiated" << std::endl;
+	std::cout << "StreamReplace Destructor Called" << std::endl;
 	return ;
 }
 
@@ -36,7 +37,7 @@ void	StreamReplace::replaceOccurance(void)
 	std::ofstream ofs("outfile");
 	if (!ofs.is_open())
 	{
-		std::cout << "Can't opn output file" << std::endl;
+		std::cout << "Can't open output file" << std::endl;
 		return ;
 	}
 	std::string occurence;

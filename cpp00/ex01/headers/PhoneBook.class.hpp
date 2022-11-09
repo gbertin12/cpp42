@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 14:30:03 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/28 12:01:28 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/07 16:18:30 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PhoneBook {
 	~PhoneBook(void);
 	
 	void	add(void);
-	void	show_contact(void) const;
+	bool	show_contact(void) const;
 	void	search_contact(void) const;
 	void	start_msg(void) const;
 	bool	empty_string (std::string str) const; 
