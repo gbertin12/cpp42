@@ -5,25 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/29 11:11:50 by gbertin           #+#    #+#              #
-#    Updated: 2022/10/31 11:42:08 by gbertin          ###   ########.fr        #
+#    Created: 2022/10/13 13:40:54 by gbertin           #+#    #+#              #
+#    Updated: 2022/11/07 16:05:55 by gbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = harl
-FLAGS = -Wall -Wextra -Werror -std=c++98
-CC = c++
+NAME = Harl
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
 RM = rm -f
-SRCS =	main.cpp \
-		Harl.cpp
+SRCS := $(shell find . -name '*.cpp' -type f)
+
 
 OBJ = $(SRCS:.cpp=.o)
-
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+		$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean:
 		$(RM) $(OBJ)
