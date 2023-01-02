@@ -5,38 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 14:22:46 by gbertin           #+#    #+#             */
-/*   Updated: 2022/12/11 14:02:23 by gbertin          ###   ########.fr       */
+/*   Created: 2023/01/02 11:07:29 by gbertin           #+#    #+#             */
+/*   Updated: 2023/01/02 15:34:33 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <iostream>
-#include <string.h>
-#include "headers/PhoneBook.class.hpp"
+#include "Bureaucrat.hpp"
 
-int	main()
+int main()
 {
-	std::string	cmd;
-	PhoneBook	phoneBook;
-	
-	phoneBook.start_msg();
-	std::cout << "> ";
-	while (std::getline(std::cin, cmd))
+	try
 	{
-		if (cmd == "ADD")
-			phoneBook.add();
-		else if (cmd == "SEARCH")
-		{
-			if (!phoneBook.show_contact())
-				phoneBook.search_contact();
-		}
-		else if (cmd == "EXIT")
-		{
-			std::cout << "Thank you for your participation" << std::endl;
-			break ;
-		}
-		std::cout << "> ";
+		Bureaucrat Boss("Bobby", 1);
+		std::cout << Boss << std::endl;
+		Boss.incrementGrade();
+		Bureaucrat Intern("Dobby", 150);
+		std::cout << Intern << std::endl;
+		Intern.decrementGrade();
 	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try
+	{
+		Bureaucrat Intern("Dobby", 150);
+		std::cout << Intern << std::endl;
+		Intern.decrementGrade();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	
 	return (0);
 }
