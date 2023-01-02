@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/12/30 12:43:21 by gbertin          ###   ########.fr       */
+/*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
+/*   Updated: 2022/12/30 12:47:59 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#include "Dog.hpp"
+#include <iostream>
 
-#include "Animal.hpp"
-#include <iostream> 
+Dog::Dog(void) : AAnimal("Dog") {
+std::cout << "Dog Constructor called" << std::endl;
+	return ;
+}
 
-class Animal {
+Dog::~Dog(void) {
+	std::cout << "Dog Destructor called" << std::endl;
+	return ;
+}
 
-	public:
+Dog::Dog(const Dog& obj) {
+	return ;
+}
 
-	Animal(void);
-	Animal(std::string type);
-	~Animal(void);
-	Animal(const Animal& obj);
-	Animal& operator=(const Animal& rhs);
+Dog&	Dog::operator=(const Dog& obj) {
+	return *this;
+}
 
-	virtual void	makeSound(void);
-	std::string		getType(void);
-	
-	protected:
-
-	std::string _type;
-
-};
-
-#endif
+void	Dog::makeSound(void) {
+	std::cout << "Wouafff Wouaff !!" << std::endl;
+}

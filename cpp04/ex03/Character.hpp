@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/12/30 12:43:21 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/02 08:32:24 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef CHARACTER_H
+# define CHARACTER_H
 
-#include "Animal.hpp"
-#include <iostream> 
+#include "ICharacter.hpp"
+#include "Materia/AMateria.hpp"
 
-class Animal {
+class Character : public ICharacter {
 
 	public:
 
-	Animal(void);
-	Animal(std::string type);
-	~Animal(void);
-	Animal(const Animal& obj);
-	Animal& operator=(const Animal& rhs);
+	Character(std::string name);
+	~Character(void);
+	Character(const Character& obj);
+	Character& operator=(const Character& rhs);
 
-	virtual void	makeSound(void);
-	std::string		getType(void);
+	void		equip(AMateria* m);
+	void		unequip(int idx);
+	void		use(int idx, ICharacter& target);
+	std::string const &getName() const;
+
+	private:
 	
-	protected:
-
-	std::string _type;
+	std::string _name;
+	AMateria*	_inventory[4];
+	AMateria*	_materiaLost[50];
+	
 
 };
 
