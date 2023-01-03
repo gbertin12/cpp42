@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/03 08:49:47 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/03 10:40:46 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AForm {
 
 	AForm(std::string name, int gradeForSign, int gradeForExecute);
 	AForm(std::string name, std::string target, int gradeForSign, int gradeForExecute);
-	~AForm(void);
+	virtual ~AForm(void);
 	AForm(const AForm& obj);
 	
 	AForm& operator=(const AForm& rhs);

@@ -6,12 +6,15 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 11:07:29 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/02 16:07:41 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/03 10:00:58 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
@@ -19,24 +22,10 @@ int main()
 	{
 		Bureaucrat Boss("Bobby", 1);
 		std::cout << Boss << std::endl << std::endl;
-		Form credentials("credentiels", 20, 4);
-		credentials.beSigned(Boss);
-		std::cout << credentials << std::endl;
-		credentials.beSigned(Boss);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	std::cout << std::endl << std::endl;
-	try
-	{
-		Bureaucrat Intern("Dobby", 150);
-		std::cout << Intern << std::endl;
-		Form interview("interview", 50, 4);
-		std::cout << interview <<  std::endl;
-		interview.beSigned(Intern);
-
+		PresidentialPardonForm presidential("Arthur Dent");
+		presidential.beSigned(Boss);
+		std::cout << presidential << std::endl;
+		Boss.executeForm(presidential);
 	}
 	catch(const std::exception& e)
 	{
@@ -45,7 +34,27 @@ int main()
 	std::cout << std::endl << std::endl;
 	try
 	{
-		Form interview("interview", 160, 4);
+		Bureaucrat Intern("Dobby", 150);
+		std::cout << Intern << std::endl;
+		ShrubberyCreationForm shruberry("Garden");
+		std::cout << shruberry <<  std::endl;
+		shruberry.beSigned(Intern);
+		Intern.executeForm(shruberry);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << std::endl << std::endl;
+	try
+	{
+		Bureaucrat Steve("Steve", 50);
+		std::cout << Steve << std::endl;
+		RobotomyRequestForm robotomyRequest("Roboto");
+		std::cout << robotomyRequest << std::endl;
+		robotomyRequest.beSigned(Steve);
+		Steve.executeForm(robotomyRequest);
+		
 	}
 	catch(const std::exception& e)
 	{

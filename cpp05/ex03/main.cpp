@@ -6,46 +6,51 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 11:07:29 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/03 09:06:21 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/03 10:42:27 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	try
-	{
-		Bureaucrat Boss("Bobby", 1);
-		std::cout << Boss << std::endl << std::endl;
-		Form credentials("credentiels", 20, 4);
-		credentials.beSigned(Boss);
-		std::cout << credentials << std::endl;
-		credentials.beSigned(Boss);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << std::endl << std::endl;
-	try
-	{
-		Bureaucrat Intern("Dobby", 150);
-		std::cout << Intern << std::endl;
-		Form interview("interview", 50, 4);
-		std::cout << interview <<  std::endl;
-		interview.beSigned(Intern);
+	Bureaucrat arthur("Arthur Dent", 5);
+	Bureaucrat bobby("bobby", 45);
+	Bureaucrat julio("Julio", 137);
 
+	std::cout << arthur << std::endl;
+	std::cout << bobby << std::endl;
+	std::cout << julio << std::endl;
+
+	Intern intern;
+
+	AForm* shrubbery;
+	AForm* presidential;
+	AForm* robotomy;
+	AForm* badForm;
+	try
+	{
+		shrubbery = intern.makeForm("Shrubbery creation", "Garden");
+		presidential = intern.makeForm("Presidential pardon", "Bobby");
+		robotomy = intern.makeForm("Robotomy request", "Julio");
+		badForm = intern.makeForm("Bad format", "Gypsy");
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	
 	std::cout << std::endl << std::endl;
 	try
 	{
-		Form interview("interview", 160, 4);
+		shrubbery->beSigned(arthur);
+		std::cout << shrubbery << std::endl;
+		arthur.executeForm(*shrubbery);
 	}
 	catch(const std::exception& e)
 	{
