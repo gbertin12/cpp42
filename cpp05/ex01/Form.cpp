@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/02 16:05:59 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:07:31 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 
 Form::Form(std::string name, int gradeForSign, int gradeForExecute) 
-	: _name(name), _gradeForSign(gradeForSign), _gradeForExecute(gradeForExecute), _signed(false) {
+	: _name(name), _signed(false),  _gradeForSign(gradeForSign),  _gradeForExecute(gradeForExecute) {
 	std::cout << "Form Constructor called" << std::endl;
 	if (this->_gradeForExecute < 1 || this->_gradeForSign < 1)
 		throw Form::GradeTooHighException();
@@ -29,7 +29,7 @@ Form::~Form(void) {
 }
 
 Form::Form(const Form& obj) 
-	: _name(obj.getName()), _signed(obj.getSigned()), _gradeForExecute(obj.getGradeForExecute()), _gradeForSign(obj.getGradeForSign()) {
+	: _name(obj.getName()), _signed(obj.getSigned()),  _gradeForSign(obj.getGradeForSign()), _gradeForExecute(obj.getGradeForExecute()) {
 	return ;
 }
 
@@ -67,12 +67,12 @@ bool				Form::getSigned() const
 	return this->_signed;
 }
 
-int const			Form::getGradeForExecute() const
+int 				Form::getGradeForExecute() const
 {
 	return this->_gradeForExecute;
 }
 
-int const			Form::getGradeForSign() const
+int 				Form::getGradeForSign() const
 {
 	return this->_gradeForSign;
 }

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 10:54:51 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:38:48 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ WrongAnimal::~WrongAnimal() {
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& obj) {
+	this->_type = obj._type;
 	return ;
 }
 
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& obj) {
+	this->_type = obj._type;
 	return *this;
 }
 

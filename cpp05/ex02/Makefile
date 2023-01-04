@@ -6,13 +6,13 @@
 #    By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 11:11:50 by gbertin           #+#    #+#              #
-#    Updated: 2023/01/03 09:48:18 by gbertin          ###   ########.fr        #
+#    Updated: 2023/01/04 13:11:25 by gbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = SpecialForm
-FLAGS = -Wall -Wextra -Werror -std=c++98
-CC = c++
+CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98
+CXX = c++
 RM = rm -f
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
@@ -21,21 +21,27 @@ SRCS =	main.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp
 
+DEPENDS := $(patsubst %.cpp,%.d,$(SRCS))
+
 OBJ = $(SRCS:.cpp=.o)
 
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+		$(CXX) $(CXXFLAGS)  -o $(NAME) $(OBJ)
 
 clean:
 		$(RM) $(OBJ)
+		$(RM) $(OBJ) $(DEPENDS)
 		
 fclean:	clean
 		$(RM) $(OBJ)
 		$(RM) $(NAME)
+		$(RM) $(OBJ) $(DEPENDS)
 
 re: fclean all
-		
+
+-include $(DEPENDS)
+
 .PHONY: all clean fclean re

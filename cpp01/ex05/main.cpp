@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:30:27 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/31 14:59:21 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:11:21 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ int	main(int argc, char **argv)
 				break ;
 		}
 	}
+	else 
+		std::cout << "Write ./Harl following by one of these arguments [DEBUG, INFO, WARNING, ERROR]" << std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 08:50:39 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/02 10:07:02 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 15:23:15 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,13 @@ int main()
 	me->equip(tmp);
 	me->equip(tmp);
 	me->equip(tmp);
-	tmp = src->createMateria("cure");
 	me->equip(tmp);
+	me->unequip(4);
+	me->use(4, *bob);
+	me->use(3, *bob);
+	me->unequip(3);
+	
+	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	
 	
@@ -60,8 +65,8 @@ int main()
 	std::cout << "------------------------------" << std::endl;
 	std::cout << "CALL DESTRUCTOR" << std::endl;
 	std::cout << "------------------------------" << std::endl << std::endl;
-	delete bob;
-	delete me;
 	delete src;
+	delete me;
+	delete bob;
 	return 0;
 }

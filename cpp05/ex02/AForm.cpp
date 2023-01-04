@@ -14,7 +14,7 @@
 #include <iostream>
 
 AForm::AForm(std::string name, int gradeForSign, int gradeForExecute) 
-	: _name(name), _gradeForSign(gradeForSign), _gradeForExecute(gradeForExecute), _signed(false) {
+	: _name(name), _signed(false), _gradeForSign(gradeForSign), _gradeForExecute(gradeForExecute) {
 	std::cout << "AForm Constructor called" << std::endl;
 	if (this->_gradeForExecute < 1 || this->_gradeForSign < 1)
 		throw AForm::GradeTooHighException();
@@ -24,7 +24,7 @@ AForm::AForm(std::string name, int gradeForSign, int gradeForExecute)
 }
 
 AForm::AForm(std::string name, std::string target, int gradeForSign, int gradeForExecute)
-	: _name(name), _target(target), _gradeForSign(gradeForSign), _gradeForExecute(gradeForExecute), _signed(false)
+	: _name(name),  _signed(false), _gradeForSign(gradeForSign), _gradeForExecute(gradeForExecute), _target(target)
 {
 	if (this->_gradeForExecute < 1 || this->_gradeForSign < 1)
 		throw AForm::GradeTooHighException();
@@ -38,7 +38,7 @@ AForm::~AForm(void) {
 }
 
 AForm::AForm(const AForm& obj) 
-	: _name(obj.getName()), _signed(obj.getSigned()), _gradeForExecute(obj.getGradeForExecute()), _gradeForSign(obj.getGradeForSign()) {
+	: _name(obj.getName()), _signed(obj.getSigned()), _gradeForSign(obj.getGradeForSign()), _gradeForExecute(obj.getGradeForExecute()) {
 	return ;
 }
 
@@ -75,7 +75,7 @@ void				AForm::execute(const Bureaucrat &executor) const
 		throw AForm::GradeTooLowException();
 }
 
-std::string const	AForm::getName() const
+std::string 		AForm::getName() const
 {
 	return this->_name;
 }
@@ -85,17 +85,17 @@ bool				AForm::getSigned() const
 	return this->_signed;
 }
 
-int const			AForm::getGradeForExecute() const
+int 				AForm::getGradeForExecute() const
 {
 	return this->_gradeForExecute;
 }
 
-int const			AForm::getGradeForSign() const
+int 				AForm::getGradeForSign() const
 {
 	return this->_gradeForSign;
 }
 
-std::string const	AForm::getTarget() const
+std::string 		AForm::getTarget() const
 {
 	return this->_target;
 }

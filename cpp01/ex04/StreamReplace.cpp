@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/08 08:52:52 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/16 12:59:51 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,28 @@ StreamReplace::~StreamReplace(void) {
 
 void	StreamReplace::replaceOccurance(void)
 {
-	std::ifstream	ifs(this->_filename);
-	int				index;
+	std::ifstream	ifs(this->_filename.c_str());
+	std::string		replace;
 	
-	if (ifs.peek() == std::ifstream::traits_type::eof())
+	replace = this->_filename + ".replace";
+	if (!ifs.is_open())
 	{
-		std::cout << "Error: File is empty or you don't have access !" << std::endl;
+		std::cout << "Error: you don't have access of file" << std::endl;
 		return ;
 	}
-	std::ofstream ofs("outfile");
+	std::ofstream ofs(replace.c_str());
 	if (!ofs.is_open())
 	{
 		std::cout << "Can't open output file" << std::endl;
+		ifs.close();
 		return ;
 	}
 	std::string occurence;
 	while(getline(ifs, occurence))
 	{
 		occurence = searchAndReplace(occurence, this->_s1, this->_s2);
-		std::cout << occurence << std::endl;
 		ofs << occurence << std::endl;
 	}
 	ifs.close();
 	ofs.close();
-	
 }

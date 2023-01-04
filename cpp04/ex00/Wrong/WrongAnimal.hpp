@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 10:14:26 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:38:12 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class WrongAnimal {
 
 	WrongAnimal(void);
 	WrongAnimal(std::string type);
-	~WrongAnimal(void);
+	virtual ~WrongAnimal(void);
 	WrongAnimal(const WrongAnimal& obj);
 	WrongAnimal& operator=(const WrongAnimal& rhs);
 

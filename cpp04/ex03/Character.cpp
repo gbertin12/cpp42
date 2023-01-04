@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/02 10:04:20 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 15:30:19 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,16 @@ Character::Character(std::string name) : _name(name) {
 }
 
 Character::~Character(void) {
-	for (int i = 0; i < 4; i++)
-	{
-		if (this->_inventory[i])
-			delete this->_inventory[i];
-	}
+	// for (int i = 0; i < 4; i++)
+	// {
+	// 	if (this->_inventory[i])
+	// 		delete this->_inventory[i];
+	// }
+	// for (int i = 0; i < 50; i++)
+	// {
+	// 	if (this->_materiaLost[i])
+	// 		delete this->_materiaLost[i];
+	// }
 	std::cout << "Character Destructor called" << std::endl;
 }
 
@@ -76,7 +81,6 @@ void		Character::unequip(int idx)
 {
 	std::cout << "Unequip Materia " << std::endl;
 	int i;
-	
 	if (idx >= 0 && idx <= 4 && this->_inventory[idx])
 	{
 		for (i = 0; i < 50; i++)

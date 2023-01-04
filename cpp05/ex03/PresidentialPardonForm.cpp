@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/03 09:53:12 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:33:08 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& obj
 }
 
 PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm& obj) {
+	this->_signed = obj._signed;
 	return *this;
 }
 

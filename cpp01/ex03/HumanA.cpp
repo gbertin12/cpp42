@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/08 08:49:52 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/16 10:19:50 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string.h>
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon) {
+HumanA::HumanA(std::string name, Weapon &weapon) : _weapon(weapon), _name(name) {
 	std::cout << "HumanA Constructor called" << std::endl;
 	return ;
 }

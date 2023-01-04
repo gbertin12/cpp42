@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/12/30 12:53:19 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:55:51 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AAnimal {
 
 	AAnimal(void);
 	AAnimal(std::string type);
-	~AAnimal(void);
+	virtual ~AAnimal(void);
 	AAnimal(const AAnimal& obj);
 	AAnimal& operator=(const AAnimal& rhs);
 

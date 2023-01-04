@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/01 15:18:07 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/19 15:22:07 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int		Fixed::getRawBits(void) const {
 }
 
 void	Fixed::setRawBits(const int raw) {
+	this->_rawBits = raw;
 }
 
 int		Fixed::toInt(void) const {

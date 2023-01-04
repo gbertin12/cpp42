@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/03 09:39:39 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:32:59 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& obj) : AForm
 }
 
 RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm& obj) {
+	this->_signed = obj._signed;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/03 09:21:21 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:25:13 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,17 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& obj) :
 }
 
 ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationForm& obj) {
+	this->_signed = obj._signed;
 	return *this;
 }
 
 void					ShrubberyCreationForm::makeAction(const Bureaucrat &executor) const
 {
 	this->AForm::execute(executor);
-	std::ofstream ofs(this->getTarget() + "_shrubbery");
+	std::string namefile = this->getTarget() + "_shrubbery";
+	std::ofstream ofs(namefile.c_str());
 	if (!ofs.is_open())
-		throw std::ofstream::failure(strerror(errno));
+		throw ShrubberyCreationForm::CantOpenFileException();
 	ofs << "	   *    *  ()   *  * " << std::endl;
 	ofs << "*        * /\\         * " << std::endl;
 	ofs << "      *   /i\\    *  * " << std::endl;

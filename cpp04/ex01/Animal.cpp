@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 16:41:09 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:46:26 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,12 @@ Animal::~Animal(void) {
 }
 
 Animal::Animal(const Animal& obj) {
+	this->_type = obj._type;
 	return ;
 }
 
 Animal&	Animal::operator=(const Animal& obj) {
+	this->_type = obj._type;
 	return *this;
 }
 
@@ -45,6 +47,7 @@ std::string	Animal::getType(void)
 }
 
 void	Animal::addIdea(std::string idea) {
+	(void)idea;
 	std::cout << "You don't have Brain !" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/03 08:49:47 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:12:07 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ class AForm {
 	virtual void			execute(const Bureaucrat &executor) const;
 	virtual void			makeAction(const Bureaucrat &executor) const = 0; 
 	
-	std::string const		getName() const;
+	std::string 			getName() const;
 	bool					getSigned() const;
-	int const				getGradeForSign() const;
-	int const				getGradeForExecute() const;
-	std::string const		getTarget() const;
+	int						getGradeForSign() const;
+	int						getGradeForExecute() const;
+	std::string 			getTarget() const;
 
 	protected:
 	

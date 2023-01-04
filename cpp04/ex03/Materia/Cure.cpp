@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/02 09:58:49 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 12:41:38 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Cure::Cure(const Cure& obj) : AMateria(obj) {
 }
 
 Cure&		Cure::operator=(const Cure& obj) {
+	this->_type = obj._type;
 	return *this;
 }
 

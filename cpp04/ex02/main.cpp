@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:30:27 by gbertin           #+#    #+#             */
-/*   Updated: 2022/12/30 12:55:37 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:58:28 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ int main()
 	std::cout << std::endl;
 	std::cout << "J : " << j->getType() << " " << std::endl;
 	std::cout << "I : " << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	std::cout << std::endl;
+	i->makeSound(); 
 	std::cout << std::endl;
 	std::cout << std::endl;
 

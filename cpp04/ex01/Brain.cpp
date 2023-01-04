@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 16:38:54 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:53:48 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,16 @@ Brain::~Brain(void) {
 }
 
 Brain::Brain(const Brain& obj) {
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = obj._ideas[i];
+	this->_index = obj._index;
 	return ;
 }
 
 Brain&	Brain::operator=(const Brain& obj) {
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = obj._ideas[i];
+	this->_index = obj._index;
 	return *this;
 }
 

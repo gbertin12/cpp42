@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/08 11:25:48 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/19 11:42:13 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(int const nb_int) {
 }
 
 Fixed::Fixed(float const nb_float) {
-	std::cout << " Fixed float constructor called" << std::endl;
+	std::cout << "Fixed float constructor called" << std::endl;
 	this->_rawBits = int(roundf(nb_float * (1 << frationPart)));
 }
 
@@ -53,6 +53,7 @@ int		Fixed::getRawBits(void) const {
 
 void	Fixed::setRawBits(const int raw) {
 	std::cout << "setRawBits member function called" << std::endl;
+	this->_rawBits = raw;
 }
 
 int		Fixed::toInt(void) const {

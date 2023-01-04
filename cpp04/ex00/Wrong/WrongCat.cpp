@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 10:58:22 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:38:22 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,12 @@ WrongCat::~WrongCat(void) {
 }
 
 WrongCat::WrongCat(const WrongCat& obj) {
+	this->_type = obj._type;
 	return ;
 }
 
 WrongCat&	WrongCat::operator=(const WrongCat& obj) {
+	this->_type = obj._type;
 	return *this;
 }
 

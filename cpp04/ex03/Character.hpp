@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/02 08:32:24 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 12:26:04 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Character : public ICharacter {
 	public:
 
 	Character(std::string name);
-	~Character(void);
+	virtual ~Character(void);
 	Character(const Character& obj);
 	Character& operator=(const Character& rhs);
 

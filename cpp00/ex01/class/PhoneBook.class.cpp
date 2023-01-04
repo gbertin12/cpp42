@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:11:22 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/07 16:24:05 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/11/09 10:06:12 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include <cstring>
 #include <cctype>
+#include <sstream>
 #include "../headers/PhoneBook.class.hpp"
 #include "../headers/Contact.class.hpp"
 
@@ -89,7 +90,7 @@ bool	PhoneBook::show_contact(void) const {
 	for (int i = 0; i < this->_nb_contact; i++)
 	{
 		std::cout << "|";
-		this->print_in_tab(std::to_string(i + 1));
+		std::cout << "         " << i + 1;
 		std::cout << "|";
 		this->print_in_tab(this->_contacts[i].getFirstName());
 		std::cout << "|";
@@ -130,11 +131,12 @@ void	PhoneBook::print_contact_info(int index) const
 
 void	PhoneBook::search_contact(void) const 
 {
-	std::string index;
-	int			i;
+	std::string			index;
+	int					i;
+	std::stringstream	ss;
 	
 	std::cout << "enter index for more informations : ";
-	if (std::getline(std::cin, index))
+	if (!std::getline(std::cin, index))
 	{
 		std::cout << std::endl;	
 		return ;
@@ -143,13 +145,14 @@ void	PhoneBook::search_contact(void) const
 	{
 		if (std::isdigit(index.c_str()[0]))
 		{
-			i = std::stoi(index);
+			ss << index;
+			ss >> i;
 			if (i < 1)
-				std::cout << "This index is negative" << std::endl;
+				std::cout << "0 is not valid" << std::endl;
 			else if (i > this->_nb_contact && i < 9)
 				std::cout << "This index is empty" << std::endl;
 			else if (i == 9)
-				std::cout << "9 is forbidden" << std::endl;
+				std::cout << "9 is not valid" << std::endl;
 			if (i < 1 || (i > PhoneBook::_nb_contact && i < 9) || i == 9)
 				return ;
 			this->print_contact_info(i);

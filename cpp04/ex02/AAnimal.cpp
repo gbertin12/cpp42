@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/12/30 12:54:42 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:56:37 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ AAnimal::~AAnimal(void) {
 }
 
 AAnimal::AAnimal(const AAnimal& obj) {
+	this->_type = obj._type;
 	return ;
 }
 
 AAnimal&	AAnimal::operator=(const AAnimal& obj) {
+	this->_type = obj._type;
 	return *this;
 }
 

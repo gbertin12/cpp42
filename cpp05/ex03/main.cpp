@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 11:07:29 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/03 10:42:27 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:55:08 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,32 +29,26 @@ int main()
 
 	Intern intern;
 
-	AForm* shrubbery;
-	AForm* presidential;
-	AForm* robotomy;
-	AForm* badForm;
+	AForm* shrubbery = NULL;
+	AForm* presidential = NULL;
+	AForm* robotomy = NULL;
+	AForm* badForm = NULL;
 	try
 	{
-		shrubbery = intern.makeForm("Shrubbery creation", "Garden");
-		presidential = intern.makeForm("Presidential pardon", "Bobby");
+		shrubbery = intern.makeForm("Shruberry creation", "Garden");
 		robotomy = intern.makeForm("Robotomy request", "Julio");
+		presidential = intern.makeForm("Presidential pardon", "Bobby");
+		shrubbery->beSigned(arthur);
+		std::cout << shrubbery << std::endl;
+		arthur.executeForm(*shrubbery);
 		badForm = intern.makeForm("Bad format", "Gypsy");
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
-	std::cout << std::endl << std::endl;
-	try
-	{
-		shrubbery->beSigned(arthur);
-		std::cout << shrubbery << std::endl;
-		arthur.executeForm(*shrubbery);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	delete shrubbery;
+	delete presidential;
+	delete robotomy;
 	return (0);
 }

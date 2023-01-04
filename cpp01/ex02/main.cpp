@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 22:24:02 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/07 11:27:49 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/16 10:17:57 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,10 @@ int main()
 
 	*strPTR = "YOUYOU";
 
+	std::cout << "CHANGE VALUE" << std::endl << std::endl;
 	std::cout << "VALEUR" << std::endl;
 	std::cout << str << std::endl;
 	std::cout << *strPTR << std::endl;
 	std::cout << strREF << std::endl << std::endl;
-
-	std::string str2 = "NEW BRAIN";
-	strPTR = &str2;
-	//&strREF = str2;
-
-	std::cout << "ADRESSE" << std::endl;
-	std::cout << &str << std::endl;
-	std::cout << strPTR << std::endl;
-	std::cout << &strREF << std::endl << std::endl;
-	
-	std::cout << "VALEUR" << std::endl;
-	std::cout << str << std::endl;
-	std::cout << *strPTR << std::endl;
-	std::cout << strREF << std::endl << std::endl;
+	return (0);
 }

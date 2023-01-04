@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/10/30 02:05:57 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/16 10:54:49 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ class StreamReplace {
 	std::string _s1;
 	std::string _s2;
 
-	
 };
 
 std::string	searchAndReplace(std::string occurence, std::string s1, std::string s2);

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/04 17:08:10 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:45:31 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ Cat::~Cat(void) {
 
 Cat::Cat(const Cat& obj) {
 	delete this->_brain;
+	this->_type = obj._type;
 	this->_brain->~Brain();
 	this->_brain = new Brain();
 	return ;
 }
 
 Cat&	Cat::operator=(const Cat& obj) {
-	
 	this->_type = obj._type;
 	return *this;
 }

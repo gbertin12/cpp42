@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/02 15:40:20 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 13:06:12 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ class Form {
 	
 	std::string const		getName() const;
 	bool					getSigned() const;
-	int const				getGradeForSign() const;
-	int const				getGradeForExecute() const;
+	int 					getGradeForSign() const;
+	int 					getGradeForExecute() const;
 
 	private:
 	

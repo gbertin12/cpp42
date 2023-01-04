@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:30:27 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/01 09:33:34 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:33:29 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int main( void )
 {
 	Fixed a;
 	Fixed const b( 10 );
-	Fixed const c( 42.426f );
+	Fixed const c( 42.42f );
 	Fixed const d( b );
 	
-	a = Fixed( 1237.4323f );
+	a = Fixed( 1234.4321f );
 	
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
