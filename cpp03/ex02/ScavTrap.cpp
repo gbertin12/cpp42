@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/02 11:40:53 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 10:12:00 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,19 @@ ScavTrap::~ScavTrap(void) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap(obj) {
-	this->_attackDamage = obj._attackDamage;
-	this->_energyPoints = obj._energyPoints;
-	this->_hitPoints = obj._hitPoints;
-	this->_name = obj._name;
+	this->_hitPoints = obj.getHitPoints();
+	this->_energyPoints = obj.getEnergyPoints();
+	this->_attackDamage = obj.getAttackDamage();
+	this->_name = obj.getName();
 	std::cout << "Scavtrap copy called" << std::endl;
 	return ;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& obj) {
-	this->_attackDamage = obj._attackDamage;
-	this->_energyPoints = obj._energyPoints;
-	this->_hitPoints = obj._hitPoints;
-	this->_name = obj._name;
+	this->_hitPoints = obj.getHitPoints();
+	this->_energyPoints = obj.getEnergyPoints();
+	this->_attackDamage = obj.getAttackDamage();
+	this->_name = obj.getName();
 	std::cout << "Scavtrap assignement operator called" << std::endl;
 	return *this;
 }
@@ -61,10 +61,11 @@ void	ScavTrap::attack(const std::string &target) {
 	if (this->_energyPoints > 0)
 	{
 		std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage !" << std::endl;
+
 		this->_energyPoints--;
 	}
 	else
-		std::cout << "You don't have enough energy !" << std::endl;
+		std::cout << this->_name << " don't have enough energy !" << std::endl;
 }
 
 void	ScavTrap::guardGate(void) {

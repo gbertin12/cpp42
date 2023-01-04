@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/02 11:35:42 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 09:04:35 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class FragTrap : public ClapTrap
 	FragTrap(const FragTrap& obj);
 	FragTrap& operator=(const FragTrap& rhs);
 
-	void	highFivesGuys(void);
+	void			highFivesGuys(void);
+	void			attack(const std::string &target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 08:30:27 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/01 17:30:30 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/04 08:53:35 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(void)
 	marvin.attack("wolf");
 	marvin.attack("wolf");
 	marvin.attack("wolf");
+	marvin.beRepaired(3);
 	marvin.attack("wolf");
 	marvin.attack("wolf");
 	marvin.attack("wolf");

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2022/11/02 11:17:29 by gbertin          ###   ########.fr       */
+/*   Updated: 2022/12/20 17:15:40 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class ScavTrap : public ClapTrap
 	ScavTrap(const ScavTrap& obj);
 	ScavTrap& operator=(const ScavTrap& rhs);
 
-	void	attack(const std::string &target);
-	void	guardGate(void);
+	void virtual	attack(const std::string &target);
+	void			guardGate(void);
 
 };
 
