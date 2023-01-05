@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 08:50:39 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/04 15:23:15 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:11:58 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int main()
 	std::cout << "------------------------------" << std::endl;
 	std::cout << "CALL DESTRUCTOR" << std::endl;
 	std::cout << "------------------------------" << std::endl << std::endl;
-	delete src;
 	delete me;
 	delete bob;
+	delete src;
 	return 0;
 }

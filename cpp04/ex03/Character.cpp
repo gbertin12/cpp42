@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/05 08:03:04 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:09:33 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,16 @@ Character::~Character(void) {
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i])
+			std::cout << std::endl << "delete materia inventory" << std::endl << std::endl;	
 			delete this->_inventory[i];
 	}
 	for (int i = 0; i < 50; i++)
 	{
 		if (this->_materiaLost[i])
+		{
+			std::cout << std::endl << "delete materia lost" << std::endl << std::endl;	
 			delete this->_materiaLost[i];
+		}
 	}
 	std::cout << "Character Destructor called" << std::endl;
 }
