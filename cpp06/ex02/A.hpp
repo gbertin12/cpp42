@@ -3,6 +3,7 @@
 
 class A : public Base
 {
-	A();
-	~A();
+	public:
+		A();
+		~A();
 };
