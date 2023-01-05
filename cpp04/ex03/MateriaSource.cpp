@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/04 15:30:28 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/05 07:39:46 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ AMateria*		MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_stock[i] != NULL && this->_stock[i]->getType() == type)
-			return this->_stock[i];
+			return this->_stock[i]->clone();
 	}
 	return NULL;
 }
