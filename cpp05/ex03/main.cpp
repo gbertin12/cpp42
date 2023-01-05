@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 11:07:29 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/04 13:55:08 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:31:08 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,12 @@ int main()
 		robotomy = intern.makeForm("Robotomy request", "Julio");
 		presidential = intern.makeForm("Presidential pardon", "Bobby");
 		shrubbery->beSigned(arthur);
+		robotomy->beSigned(arthur);
+		presidential->beSigned(arthur);
 		std::cout << shrubbery << std::endl;
 		arthur.executeForm(*shrubbery);
+		arthur.executeForm(*robotomy);
+		arthur.executeForm(*presidential);
 		badForm = intern.makeForm("Bad format", "Gypsy");
 	}
 	catch(const std::exception& e)

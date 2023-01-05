@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/04 13:54:03 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:31:48 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ AForm*		Intern::makeForm(const std::string &form, const std::string &target) con
 	int i;
 	AForm* newForm = NULL;
 	i = 0;
-	while (i < 3 && formTitles[0] != form)
+	while (i < 3 && formTitles[i] != form)
 		i++;
 	switch (i)
 	{
