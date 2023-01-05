@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/05 07:44:09 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/05 08:03:04 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Character::Character(const Character& obj) {
 			delete this->_inventory[i];
 	}
 	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = obj._inventory[i];
+		this->_inventory[i] = obj._inventory[i]->clone();
 }
 
 Character&	Character::operator=(const Character& obj) {
@@ -52,7 +52,7 @@ Character&	Character::operator=(const Character& obj) {
 			delete this->_inventory[i];
 	}
 	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = obj._inventory[i];
+		this->_inventory[i] = obj._inventory[i]->clone();
 	return *this;
 }
 
@@ -70,7 +70,7 @@ void		Character::equip(AMateria* m)
 	{
 		if (this->_inventory[i] == NULL)
 		{
-			this->_inventory[i] = m;
+			this->_inventory[i] = m->clone();
 			return ;
 		}
 	}
@@ -91,6 +91,7 @@ void		Character::unequip(int idx)
 		if (i < 50)
 		{
 			this->_materiaLost[i] = this->_inventory[idx];
+			std::cout << &this->_materiaLost[i] << " " << &this->_materiaLost[i] << std::endl;
 			this->_inventory[idx] = NULL;
 			return ;
 		}

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2023/01/04 12:26:04 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/01/05 07:48:18 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CHARACTER_H
 
 #include "ICharacter.hpp"
-#include "Materia/AMateria.hpp"
 
 class Character : public ICharacter {
 
