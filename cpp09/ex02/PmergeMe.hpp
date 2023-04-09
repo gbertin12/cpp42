@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitCoinExchange.hpp                                :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2023/03/30 12:48:13 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/09 09:16:48 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHANGE_H
-# define BITCOINEXCHANGE_H
+#ifndef PMERGEME_H
+# define PMERGEME_H
 
-#include "BitCoinExchange.hpp"
-#include <map>
-#include <string>
+#include "PmergeMe.hpp"
+#include <vector>
+#include <deque>
 
-class BitCoinExchange {
+class PmergeMe {
 
 	public:
 
-	BitCoinExchange(void);
-	BitCoinExchange(std::string filename);
-	~BitCoinExchange(void);
-
-	BitCoinExchange(const BitCoinExchange& obj);
-	BitCoinExchange& operator=(const BitCoinExchange& rhs);
-
-	void	printOutput();
-	float	getValue(std::tm& searchDate);
+	PmergeMe(void);
+	PmergeMe(char **list, size_t size);
+	~PmergeMe(void);
+	PmergeMe(const PmergeMe& obj);
+	PmergeMe& operator=(const PmergeMe& rhs);
 
 	private:
+	
 
-	std::map<std::string, float>	_mapBitcoin;
-	const std::string				_filename;
+	std::vector<std::pair<int, int> >		_vector;
+	std::deque<std::pair<int, int> >		_deque;
+	int										_last;
+	
 
 };
 
