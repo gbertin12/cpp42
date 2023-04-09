@@ -6,15 +6,16 @@
 #    By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/05 08:32:53 by gbertin           #+#    #+#              #
-#    Updated: 2023/03/14 16:17:28 by gbertin          ###   ########.fr        #
+#    Updated: 2023/03/31 06:51:34 by gbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Whatever
+NAME = RPN
 CXXFLAGS = -Wall -Wextra -Werror -g -MMD -std=c++98
 CXX = c++
 RM = rm -f
-SRCS =	main.cpp 
+SRCS =	main.cpp \
+		RPN.cpp
 		
 DEPENDS := $(patsubst %.cpp,%.d,$(SRCS))
 
