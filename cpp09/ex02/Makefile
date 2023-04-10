@@ -6,7 +6,7 @@
 #    By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/05 08:32:53 by gbertin           #+#    #+#              #
-#    Updated: 2023/04/02 15:48:32 by gbertin          ###   ########.fr        #
+#    Updated: 2023/04/10 12:39:09 by gbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = PmergeMe
 CXXFLAGS = -Wall -Wextra -Werror -g -MMD -std=c++98
 CXX = c++
 RM = rm -f
-SRCS =	main.cpp 
+SRCS =	main.cpp \
+		PmergeMe.cpp
 		
 DEPENDS := $(patsubst %.cpp,%.d,$(SRCS))
 
