@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/04/10 12:44:28 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/10 13:06:30 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void    checkInput(char *nb)
 {
-    if (std::atoi(nb))
+    if (std::atoi(nb) == 0)
     {
         std::cerr << "Invalid input number" << std::endl;
         exit(0);
@@ -41,6 +41,7 @@ PmergeMe::PmergeMe(char **list, size_t size) : _list(list), _sizeList(size), _la
 	}
 	for (size_t i = 1; i < size; i += 2)
 	{
+		std::cout << "loop" << std::endl;
 		checkInput(list[i]);
 		_output += list[i];
 		_output += " ";
@@ -64,7 +65,7 @@ void	PmergeMe::sortDeque()
 		}
 		std::cout << "1:" << (*it).first << " 2:" << (*it).second << std::endl;
 	}
-	_output += "Time to process a range of " + _sizeList - 1; 
+	_output += "Time to process a range of "; 
 	_output += "elements with std::deque :";
 }
 
