@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/04/10 13:06:30 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/10 14:15:12 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ PmergeMe::PmergeMe(char **list, size_t size) : _list(list), _sizeList(size), _la
 	}
 	for (size_t i = 1; i < size; i += 2)
 	{
-		std::cout << "loop" << std::endl;
 		checkInput(list[i]);
 		_output += list[i];
 		_output += " ";
@@ -51,10 +50,12 @@ PmergeMe::PmergeMe(char **list, size_t size) : _list(list), _sizeList(size), _la
 
 void	PmergeMe::sortDeque()
 {
+	//make pair and add too container deque
 	for (size_t i = 1; i < _sizeList; i += 2)
 		_deque.push_back(std::make_pair(std::atoi(_list[i]), std::atoi(_list[i + 1])));
 	
 	std::deque<std::pair<int, int> >::iterator it;
+	// swap element on each pair if first > second
 	for (it = _deque.begin(); it != _deque.end(); it++)
 	{
 		if ((*it).first > (*it).second)
@@ -65,6 +66,19 @@ void	PmergeMe::sortDeque()
 		}
 		std::cout << "1:" << (*it).first << " 2:" << (*it).second << std::endl;
 	}
+	
+	// sort pair by biggest element of each pair
+	
+	// create final tab and tmp tab
+	std::deque<int> finalTab;
+	std::deque<int> tmpTab;
+	// add smaller element in tmpTab and biggest element in finalTab
+	for (it = _deque.begin(); it != _deque.end(); it++)
+	{
+		tmpTab.insert((*it).first);
+	}
+
+	// insert 
 	_output += "Time to process a range of "; 
 	_output += "elements with std::deque :";
 }

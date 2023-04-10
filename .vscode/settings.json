@@ -78,6 +78,9 @@
 		"numeric": "cpp",
 		"random": "cpp",
 		"numbers": "cpp",
-		"ranges": "cpp"
+		"ranges": "cpp",
+		"list": "cpp",
+		"map": "cpp",
+		"span": "cpp"
 	}
 }
