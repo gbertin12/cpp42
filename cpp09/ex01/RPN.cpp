@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/04/09 08:55:25 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/11 13:54:04 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,12 @@ int  RPN::makeOperation(std::string op)
 	else if (op == "*")
 		a = a * b;
 	else if (op == "/")
-		a = a / b;
+	{
+		if (b == 0 || a == 0)
+			a = 0;
+		else
+			a = a / b;
+	}
 	_stack.push_back(a);
 	return 1;
 }
