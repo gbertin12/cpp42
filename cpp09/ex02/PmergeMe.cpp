@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/04/11 05:27:52 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/19 08:22:08 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <sys/time.h>
 
-PmergeMe::PmergeMe(void){
+PmergeMe::PmergeMe(void) : _output(""), _list(NULL), _sizeList(0), _last(0), _odd(false){
 std::cout << "PmergeMe Constructor called" << std::endl;
 	return ;
 }
@@ -25,12 +25,26 @@ PmergeMe::~PmergeMe(void) {
 }
 
 PmergeMe::PmergeMe(const PmergeMe& obj) {
-	(void)obj;
+	this->_output = obj._output;
+	this->_list = obj._list;
+	this->_sizeList = obj._sizeList;
+	this->_last = obj._last;
+	this->_odd = obj._odd;
+	this->_deque = obj._deque;
+	this->_dequeSorted = obj._dequeSorted;
+	this->_output = obj._output;
 	return ;
 }
 
 PmergeMe&	PmergeMe::operator=(const PmergeMe& obj) {
-	(void)obj;
+	this->_output = obj._output;
+	this->_list = obj._list;
+	this->_sizeList = obj._sizeList;
+	this->_last = obj._last;
+	this->_odd = obj._odd;
+	this->_deque = obj._deque;
+	this->_dequeSorted = obj._dequeSorted;
+	this->_output = obj._output;
 	return *this;
 }
 
@@ -105,21 +119,14 @@ void	PmergeMe::sortDeque()
 					_odd = false;
 				}
 			}
-			if (tmpTab[i] < _dequeSorted[j])
+			if (tmpTab[i] <= _dequeSorted[j])
 			{
 				_dequeSorted.insert(_dequeSorted.begin() + j, tmpTab[i]);
 				break;
 			}
 		}
+		
 	}
-	// update output
-	// _output += "After: ";
-	// for (size_t i = 0; i < finalTab.size(); i++)
-	// {
-	// 	_output += std::to_string(finalTab[i]);
-	// 	_output += " ";
-	// }
-	// _output += "\n";
 }
 
 void	PmergeMe::sortVector()
@@ -179,6 +186,13 @@ void	PmergeMe::handleDeque()
     sec = end.tv_sec - start.tv_sec;
     micro = end.tv_usec - start.tv_usec;
     long diff = (sec / 1000000) + (micro);
+	_output += "After: ";
+	for (size_t i = 0; i < _dequeSorted.size(); i++)
+	{
+		_output += std::to_string(_dequeSorted[i]);
+		_output += " ";
+	}
+	_output += "\n";
 	_output += "Time to process a range of " + std::to_string(_sizeList - 1) + " elements with std::deque : " + std::to_string(diff) + " microseconds\n"; 
 }
 
@@ -206,7 +220,7 @@ void PmergeMe::handleVector()
     sec = end.tv_sec - start.tv_sec;
     micro = end.tv_usec - start.tv_usec;
     long diff = (sec / 1000000) + (micro);
-	_output += "Time to process a range of " + std::to_string(_sizeList - 1) + " elements with std::vector : " + std::to_string(diff) + " microseconds\n"; 
+	_output += "Time to process a range of " + std::to_string(_sizeList - 1) + " elements with std::vector : " + std::to_string(diff) + " microseconds"; 
 }
 
 void	PmergeMe::output()

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/03/30 14:45:50 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/19 07:48:01 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ BitCoinExchange::BitCoinExchange(std::string filename) : _filename(filename)
 		value = newline.substr(newline.find(',') + 1, newline.size() - 1);
 		float	num = std::stof(value.c_str());
 		_mapBitcoin.insert(std::pair<std::string, float>(date, num));
-		//std::cout << _mapBitcoin.rbegin()->first << " : " << _mapBitcoin.rbegin()->second << std::endl;
 	}
 	ifs.close();
 }
@@ -79,12 +78,14 @@ BitCoinExchange::~BitCoinExchange(void) {
 }
 
 BitCoinExchange::BitCoinExchange(const BitCoinExchange& obj) {
-	(void)obj;
+	this->_filename = obj._filename;
+	this->_mapBitcoin = obj._mapBitcoin;
 	return ;
 }
 
 BitCoinExchange&	BitCoinExchange::operator=(const BitCoinExchange& obj) {
-	(void)obj;
+	this->_filename = obj._filename;
+	this->_mapBitcoin = obj._mapBitcoin;
 	return *this;
 }
 
@@ -188,13 +189,8 @@ void	BitCoinExchange::printOutput()
 						std::cout << "Error: no price for this date => " << date << std::endl;
 						continue ;
 					}
-					if (nbBitcoin <= 1000 && nbBitcoin > -1)
-					{
-						// if (price == 0)
-						// 	std::cout << date << " => " << value << " = " << price << std::endl;
-						// else
+					if (nbBitcoin <= 1000 && nbBitcoin > 0)
 						std::cout << date << " => " << nbBitcoin << " = " << nbBitcoin * price << std::endl;
-					}
 					else if (nbBitcoin > 1000)
 						std::cout << "Error: too large a number" << std::endl;
 					else if (nbBitcoin < 0 )

@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:49 by gbertin           #+#    #+#             */
-/*   Updated: 2023/04/11 13:54:04 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/19 07:51:57 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include <iostream>
 #include <stack>
 
-RPN::RPN(void){
-	_expression = "";
+RPN::RPN(void) : _expression("") {
 }
 
 RPN::RPN(std::string expression) : _expression(expression){
@@ -26,12 +25,14 @@ RPN::~RPN(void) {
 }
 
 RPN::RPN(const RPN& obj) {
-	(void)obj;
+	this->_expression = obj._expression;
+	this->_stack = obj._stack;
 	return ;
 }
 
 RPN&	RPN::operator=(const RPN& obj) {
-	(void)obj;
+	this->_expression = obj._expression;
+	this->_stack = obj._stack;
 	return *this;
 }
 
@@ -63,7 +64,7 @@ int  RPN::makeOperation(std::string op)
 		a = a * b;
 	else if (op == "/")
 	{
-		if (b == 0 || a == 0)
+		if (b == 0)
 			a = 0;
 		else
 			a = a / b;

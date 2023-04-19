@@ -6,7 +6,7 @@
 /*   By: gbertin <gbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 17:38:53 by gbertin           #+#    #+#             */
-/*   Updated: 2023/03/30 12:48:13 by gbertin          ###   ########.fr       */
+/*   Updated: 2023/04/19 07:38:18 by gbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class BitCoinExchange {
 	private:
 
 	std::map<std::string, float>	_mapBitcoin;
-	const std::string				_filename;
+	std::string						_filename;
 
 };
 
